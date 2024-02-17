@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WXBC.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="20,20"
+            VerticalOptions="Start">
+            <Picker x:Name="picker"
+                SelectedIndexChanged="OnPickerSelectedIndexChanged"
+                Title="Select a Ward" FontSize="18" >
+                <Picker.ItemsSource>
+                    <!--<x:Array Type="{x:Type x:String}">
+                        <x:String>279</x:String>
+                        <x:String>285</x:String>
+                        <x:String>302</x:String>
+                    </x:Array>-->
+                </Picker.ItemsSource>
+            </Picker>
+            <Label
+                Text="Or Enter a Ward Number:"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                FontSize="18"
+                Margin="0,20,0,0"
+                HorizontalOptions="Start">
+            </Label>
+            <Entry x:Name="entryWard"
+                 Placeholder="Enter Ward"
+                   MaxLength="3"
+                   Keyboard="Numeric" FontSize="18">
+            </Entry>
+            <!--<Frame>-->
+            <HorizontalStackLayout Spacing="10" Margin="210,0,0,0">
+                <Button x:Name="ButtonAdd" Text="Add"
+                        Clicked="ButtonAdd_Clicked"    
+                        HorizontalOptions="Center"/>
+                <Button x:Name="ButtonDel" Text="Del" BackgroundColor="DarkSlateGrey"
+                        Clicked="ButtonDel_Clicked"    
+                        HorizontalOptions="Center"/>
+
+            </HorizontalStackLayout>
+            <!--</Frame>-->
+            <Label
+                Text="Enter an IMF:"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                FontSize="18"
+                Margin="0,20,0,0"
+                HorizontalOptions="Start">
+            </Label>
+            <Entry x:Name="entryIMF"
+                 Placeholder="Enter IMF"
+                   MaxLength="6"
+                   Keyboard="Numeric" FontSize="18">
+            </Entry>
+            <Label Margin="0,40,0,0" HorizontalOptions="Center">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span x:Name="BarCode" Text=" " FontFamily="free3of9"   TextColor="Black"   FontSize="48"  FontAttributes="None"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label x:Name="BCode"
+                Text=""
+                FontSize="18"
+                HorizontalOptions="Center">
+            </Label>
+            <Button x:Name="ButtonBC" Text="Get Barcode"
+                Clicked="ButtonBC_Clicked"    
+                HorizontalOptions="Center"/>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
